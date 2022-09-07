@@ -2,14 +2,14 @@ import { Navbar, Dropdown, Avatar } from "flowbite-react";
 import { DarkThemeToggle } from 'flowbite-react/lib/esm/components';
 
 const Header = (props) => {
-    const { animate } = { ...props };
+    const { animate, isPreview } = { ...props };
 
     return (
-        <div class="fixed top-0 w-full z-50 ">
+        <div className={`${isPreview ? '' : 'fixed'} top-0 w-full z-50 shadow-md`}>
             <Navbar
                 fluid={false}
                 rounded={false}
-                border={true}
+                border={false}
             >
                 <Navbar.Brand href="#">
                     {/* Brand - Image and Text */}
@@ -31,8 +31,13 @@ const Header = (props) => {
 
                 {/* Header - Right */}
                 <div className={`hidden lg:flex lg:items-center lg:order-2 lg:space-x-5 lg:${animate ? "hidden" : ""}`}>
-                    <svg className="w-6 h-6 text-gray-700 dark:text-white cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    {/* Notifications */}
+                    <div className="relative cursor-pointer">
+                        <svg className="w-6 h-6 text-gray-700 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                        <div className="inline-flex absolute -top-3 -right-3 justify-center items-center w-6 h-6 text-[0.55rem] font-bold text-white bg-red-500 rounded-full border-2 border-white dark:border-gray-900">99+</div>
+                    </div>
 
+                    {/* Settings */}
                     <svg className="w-6 h-6 text-gray-700 dark:text-white cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
 
                     <DarkThemeToggle />
@@ -110,7 +115,7 @@ const Header = (props) => {
                     </div>
 
                     {/* Menu Icon */}
-                    <svg class={`w-6 h-6 text-gray-900 dark:text-gray-300 ${animate ? "hidden" : ""}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    <svg className={`w-6 h-6 text-gray-900 dark:text-gray-300 ${animate ? "hidden" : ""}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                 </div>
 
                 {/* Header Right Pulse - md and below devices */}
@@ -118,7 +123,7 @@ const Header = (props) => {
                     <svg className={`w-14 h-14 text-gray-200 dark:text-gray-700`} aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
 
                     {/* Menu Icon */}
-                    <svg class="w-6 h-6 text-gray-900 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    <svg className="w-6 h-6 text-gray-900 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                 </div>
 
                 {/* <Navbar.Collapse>
@@ -147,3 +152,7 @@ const Header = (props) => {
 }
 
 export default Header;
+
+Header.defaultProps = {
+    isPreview: false
+}

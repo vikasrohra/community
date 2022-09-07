@@ -2,63 +2,119 @@ import { Sidebar, Accordion } from "flowbite-react/lib/esm/components";
 import { HiOutlineArrowCircleDown } from "flowbite";
 
 const SideNav = (props) => {
-    const { animate } = { ...props };
+    const { animate, isPreview, isHomeSelected, isGroupsSelected, isSettingsSelected, setHomeVisibility, setGroupsVisibility, setSettingsVisibility } = { ...props };
+
+    const setSectionVisibility = (isHome, isGroup, isSettting) => {
+        debugger;
+        setHomeVisibility(isHome);
+        setGroupsVisibility(isGroup);
+        setSettingsVisibility(isSettting);
+    }
 
     return (
-        <div className={`hidden md:w-fit lg:block border-0 rounded-md fixed ${animate ? "lg:mt-4" : "lg:mt-0"} max-h-[100vh] overflow-y-auto`}>
-            <Sidebar aria-label="Sidebar with content separator example">
-                <Sidebar.Items>
-                    <Sidebar.ItemGroup>
-                        <Sidebar.Item
-                            href="#"
-                        >
-                            <span className="flex justify-start items-center">
-                                <svg className="w-6 h-6 text-gray-700 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                                <span className="ml-2 font-bold">Home</span>
-                            </span>
-                        </Sidebar.Item>
-                        <Sidebar.Item
-                            href="#"
-                        >
-                            <span className="flex justify-start items-center">
-                                <svg className="w-6 h-6 text-gray-700 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                                <span className="ml-2 font-bold">Explore Groups</span>
-                            </span>
-                        </Sidebar.Item>
-                        <Sidebar.Item
-                            href="#"
-                        >
-                            <span className="flex justify-start items-center">
-                                <svg className="w-6 h-6 text-dark-600 dark:text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <span className="ml-2 font-bold">Settings</span>
-                            </span>
-                        </Sidebar.Item>
-                    </Sidebar.ItemGroup>
-                    <Sidebar.ItemGroup>
-                        <Sidebar.Item
-                            href="#"
-                        >
-                            <span className="flex justify-start items-center">
-                                <span className="font-bold uppercase">Groups</span>
-                            </span>
-                        </Sidebar.Item>
-                        {/* <Sidebar.Item
-                            href="#"
-                        >
-                            <span className="flex justify-start items-center">
-                                <svg className="w-6 h-6 text-gray-700 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                <span className="ml-2 font-semibold">JavaScript Community</span>
-                            </span>
-                        </Sidebar.Item>
-                        <Sidebar.Item
-                            href="#"
-                        >
-                            <span className="flex justify-start items-center">
-                                <svg className="w-6 h-6 text-gray-700 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                <span className="ml-2 font-semibold">ReactJS Community</span>
-                            </span>
-                        </Sidebar.Item> */}
-                    </Sidebar.ItemGroup>
+        <aside className={`hidden xl:w-64 lg:w-60 lg:block overflow-y-auto h-[100vh] fixed ${animate ? "-mt-1" : "-mt-5"} ${!animate && isPreview ? "-mt-6" : "-mt-5"}`} aria-label="Sidebar">
+            {animate ?
+                <div className="py-4 px-3 bg-white shadow-md dark:bg-gray-800">
+                    <ul className="space-y-2">
+                        <li className="pb-4">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse"></div>
+                        </li>
+                        <li className="pb-4">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse"></div>
+                        </li>
+                        <li className="pb-4">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse"></div>
+                        </li>
+                    </ul>
+                    <ul className="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
+                        <li className="pb-4">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse"></div>
+                        </li>
+                    </ul>
+                    <ul className="ml-4 space-y-2">
+                        <li className="pb-4">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse"></div>
+                        </li>
+                    </ul>
+                    <ul className="ml-4 space-y-2">
+                        <li className="pb-4 flex justify-between">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[40%]"></div>
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[10%]"></div>
+                        </li>
+                        <li className="pb-4 flex justify-between">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[40%]"></div>
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[10%]"></div>
+                        </li>
+                        <li className="pb-4 flex justify-between">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[40%]"></div>
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[10%]"></div>
+                        </li>
+                        <li className="pb-4 flex justify-between">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[40%]"></div>
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[10%]"></div>
+                        </li>
+                        <li className="pb-4 flex justify-between">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[40%]"></div>
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[10%]"></div>
+                        </li>
+                    </ul>
+                    <ul className="ml-4 space-y-2">
+                        <li className="pb-4">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse"></div>
+                        </li>
+                    </ul>
+                    <ul className="ml-4 space-y-2">
+                        <li className="pb-4 flex justify-between">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[40%]"></div>
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[10%]"></div>
+                        </li>
+                        <li className="pb-4 flex justify-between">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[40%]"></div>
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[10%]"></div>
+                        </li>
+                        <li className="pb-4 flex justify-between">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[40%]"></div>
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[10%]"></div>
+                        </li>
+                        <li className="pb-4 flex justify-between">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[40%]"></div>
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[10%]"></div>
+                        </li>
+                        <li className="pb-4 flex justify-between">
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[40%]"></div>
+                            <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 m-2 animate-pulse w-[10%]"></div>
+                        </li>
+                    </ul>
+                </div>
+                :
+                <div className="py-4 px-3 bg-white shadow-md dark:bg-gray-800">
+                    <ul className="space-y-2">
+                        <li>
+                            <a href="#" className={`flex items-center p-2 text-base font-semibold text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-70 ${isHomeSelected ? 'bg-gray-300 dark:bg-gray-500 hover:bg-gray-300 dark:hover:bg-gray-500' : ''}`} onClick={() => setSectionVisibility(true, false, false)}>
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+                                <span className="ml-3">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className={`flex items-center p-2 text-base font-semibold text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ${isGroupsSelected ? 'bg-gray-300 dark:bg-gray-500 hover:bg-gray-300 dark:hover:bg-gray-500' : ''}`} onClick={() => setSectionVisibility(false, true, false)}>
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                                <span className="ml-3">Explore Groups</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className={`flex items-center p-2 text-base font-semibold text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ${isSettingsSelected ? 'bg-gray-300 dark:bg-gray-500 hover:bg-gray-300 dark:hover:bg-gray-500' : ''}`} onClick={() => setSectionVisibility(false, false, true)}>
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                                <span className="ml-3">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul className="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
+                        <li>
+                            <a href="#" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
+                                <span className="uppercase">Groups</span>
+                            </a>
+                        </li>
+                    </ul>
                     <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>
                         <Accordion.Panel>
                             <Accordion.Title>
@@ -88,7 +144,9 @@ const SideNav = (props) => {
                                     </li>
                                 </ul>
                             </Accordion.Content>
-                        </Accordion.Panel>
+                        </Accordion.Panel>                        
+                    </Accordion>
+                    <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>                        
                         <Accordion.Panel>
                             <Accordion.Title>
                                 Front-End
@@ -115,10 +173,14 @@ const SideNav = (props) => {
                             </Accordion.Content>
                         </Accordion.Panel>
                     </Accordion>
-                </Sidebar.Items>
-            </Sidebar>
-        </div>
+                </div>
+            }
+        </aside>
     )
 }
 
 export default SideNav;
+
+SideNav.defaultProps = {
+    isPreview: false
+}

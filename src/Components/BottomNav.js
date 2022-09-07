@@ -5,11 +5,11 @@ const BottomNav = (props) => {
     const { animate } = { ...props };
 
     return (
-        <div className="fixed bottom-0 w-full lg:hidden">
+        <div className="fixed bottom-0 w-full lg:hidden shadow-md">
             <Navbar
                 fluid={false}
                 rounded={false}
-                border={true}
+                border={false}
             >
                 {/* Bottom Nav */}
                 <div className={`w-full flex justify-evenly items-center ${animate ? "hidden" : ""} lg:hidden`}>
