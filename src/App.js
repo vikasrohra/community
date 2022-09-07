@@ -6,6 +6,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import BottomNav from './Components/BottomNav';
 import PreviewModal from './Components/PreviewModal';
+import ExploreGroups from './Components/ExploreGroups';
 
 function App() {
   const [animate, setAnimate] = useState(true);
@@ -46,6 +47,7 @@ function App() {
         <main className='flex mt-20 mb-20 lg:mb-0 md:mt-[5rem] lg:flex lg:flex-row lg:mt-20'>
           <SideNav animate={animate} isHomeSelected={showHome} isGroupsSelected={showGroups} isSettingsSelected={showSettings} setHomeVisibility={setHomeVisibility} setGroupsVisibility={setGroupsVisibility} setSettingsVisibility={setSettingsVisibility} />
           {showHome && <Hero animate={animate} /> }
+          {showGroups && <ExploreGroups /> }
           {(showHome || showGroups) && <RightSection animate={animate} />}          
         </main>
         <BottomNav animate={animate} />

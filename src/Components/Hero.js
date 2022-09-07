@@ -17,17 +17,7 @@ const Hero = (props) => {
                     <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-[90%] md:w-[96%] mb-2.5 ml-4"></div>
                     {/* Tabs */}
                     <SectionTabs animate={animate} />
-                </div> :
-                // <div className="w-full text-left mx-4 lg:m-0 lg:ml-[16.9rem] lg:mr-4">
-                //     <Card imgSrc={require('../Assets/Images/hero.webp')}>
-                //         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                //             Coder Community
-                //         </h5>
-                //         <p className="font-normal text-gray-700 dark:text-gray-400">
-                //             Welcome to coder community. You might be learning from any place, company or resource, we are here to help you. Post any of your doubt and there are other fellow coders along with our team to solve your doubts.
-                //         </p>
-                //     </Card>
-                // </div>
+                </div> :                
                 <>
                     <div className="w-full bg-white border border-gray-200 dark:border-gray-700 shadow-md text-left mx-4 lg:m-0 lg:ml-[16rem] xl:ml-[16.9rem] lg:mr-4 dark:bg-gray-800">
                         <div className='overflow-hidden'>
