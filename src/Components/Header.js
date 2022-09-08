@@ -92,7 +92,8 @@ const Header = (props) => {
                             arrowIcon={false}
                             floatingArrow={false}
                             inline={true}
-                            label={<Avatar alt="User settings" img={require('../Assets/Images/owner.png')} rounded={true} />}
+                            label={<Avatar alt="User settings" img={require('../Assets/Images/owner.png')} rounded={true} status="online"
+                            statusPosition="bottom-right" bordered={true} />}
                         >
                             <Dropdown.Header>
                                 <span className="block text-sm">
