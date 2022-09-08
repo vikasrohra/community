@@ -11,7 +11,7 @@ const SideNav = (props) => {
     }
 
     return (
-        <aside className={`hidden xl:w-64 lg:w-60 lg:block overflow-y-auto h-[100vh] fixed ${animate ? "-mt-1" : "-mt-5"} ${!animate && isPreview ? "-mt-6" : "-mt-5"}`} aria-label="Sidebar">
+        <aside className={`hidden xl:w-64 lg:w-60 lg:block overflow-y-auto h-[100vh] fixed ${animate ? "mt-0" : "-mt-[1rem]"} ${!animate && isPreview ? "-mt-6" : "-mt-5"}`} aria-label="Sidebar">
             {animate ?
                 <div className="py-4 px-3 bg-white shadow-md dark:bg-gray-800">
                     <ul className="space-y-2">
@@ -86,7 +86,8 @@ const SideNav = (props) => {
                     </ul>
                 </div>
                 :
-                <div className="py-4 px-3 bg-white shadow-md dark:bg-gray-800">
+                // <div className="py-4 px-3 bg-white shadow-md dark:bg-gray-800">
+                <div className="py-4 px-3 bg-white shadow-md dark:bg-[#111827]">
                     <ul className="space-y-2">
                         <li>
                             <a href="#" className={`flex items-center p-2 text-base font-semibold text-gray-900 rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ${isHomeSelected ? 'bg-gray-300 dark:bg-gray-500 hover:bg-gray-300 dark:hover:bg-gray-500' : ''}`} onClick={() => setSectionVisibility(true, false, false)}>

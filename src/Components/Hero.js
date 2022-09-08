@@ -19,7 +19,7 @@ const Hero = (props) => {
                     <SectionTabs animate={animate} />
                 </div> :                
                 <>
-                    <div className="w-full bg-white border border-gray-200 dark:border-gray-700 shadow-md text-left mx-4 lg:m-0 lg:ml-[16rem] xl:ml-[16.9rem] lg:mr-4 dark:bg-gray-800 dark:border-0">
+                    <div className="w-full bg-white border border-gray-200 dark:border-gray-700 shadow-md text-left mx-4 lg:m-0 lg:ml-[16rem] xl:ml-[16.9rem] lg:mr-4 dark:bg-gray-800">
                         <div className='overflow-hidden'>
                             <img className="w-full hover:scale-105 delay-200 duration-300" src={require('../Assets/Images/hero.webp')} alt="product" />
                         </div>

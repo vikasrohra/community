@@ -3,10 +3,10 @@ const CommunityOwner = (props) => {
 
     return (
         <>
-            <div className="w-full bg-white border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 pb-3 pt-2 mb-1">
+            {/* <div className="w-full bg-white border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 pb-3 pt-2 mb-1">
                 {animate ? <div className="h-4 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mx-auto animate-pulse"></div>
                     : <h5 className="text-2xl font-bold leading-none text-gray-900 dark:text-white text-center">Community Owner</h5>}
-            </div>
+            </div> */}
             <div className="w-full bg-white border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <div className="flex flex-col items-center py-5 px-5">
                     <div className='w-full flex justify-between items-center mb-6 text-gray-700 dark:text-gray-400'>

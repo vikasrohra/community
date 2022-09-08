@@ -45,7 +45,7 @@ function App() {
 
   return (
     <>
-      <div className={`App ${showRightSectionDrawer ? 'opacity-20 lg:opacity-100' : ''}`}>
+      <div className={`App ${showRightSectionDrawer ? 'opacity-20 lg:opacity-100' : ''} bg-white dark:bg-[#111827] -mt-4 lg:-mt-5 pt-4`}>
         <Header animate={animate} setRightSectionDrawerVisibility={setRightSectionDrawerVisibility} showRightSectionDrawer={showRightSectionDrawer} />
         <main className={`flex mt-20 mb-20 lg:mb-0 md:mt-[5rem] lg:flex lg:flex-row lg:mt-20 ${showRightSectionDrawer ? "mt-4 md:mt-4 lg:mt-20" : "mt-20 md:mt-[5rem] lg:mt-20"}`}>
           <SideNav animate={animate} isHomeSelected={showHome} isGroupsSelected={showGroups} isSettingsSelected={showSettings} setHomeVisibility={setHomeVisibility} setGroupsVisibility={setGroupsVisibility} setSettingsVisibility={setSettingsVisibility} />

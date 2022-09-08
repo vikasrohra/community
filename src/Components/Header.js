@@ -15,7 +15,7 @@ const Header = (props) => {
                 rounded={false}
                 border={false}
             >
-                <Navbar.Brand href="#">
+                <Navbar.Brand href="./">
                     {/* Brand - Image and Text */}
                     <img
                         src={require('../Assets/Images/logo.webp')}
