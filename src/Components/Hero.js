@@ -21,7 +21,7 @@ const Hero = (props) => {
                 <>
                     <div className="w-full bg-white border border-gray-200 dark:border-gray-700 shadow-md text-left mx-4 lg:m-0 lg:ml-[16rem] xl:ml-[16.9rem] lg:mr-4 dark:bg-gray-800">
                         <div className='overflow-hidden'>
-                            <img className="w-full hover:scale-105 delay-200 duration-300" src={require('../Assets/Images/hero.webp')} alt="product" />
+                            <img className="w-full hover:scale-125 delay-200 ease-in-out duration-500" src={require('../Assets/Images/hero.jpg')} alt="product" />
                         </div>
                         <div className="p-5 pb-0">
                             <h5 className="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">Coder Community</h5>

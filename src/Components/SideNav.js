@@ -144,9 +144,9 @@ const SideNav = (props) => {
                                     </li>
                                 </ul>
                             </Accordion.Content>
-                        </Accordion.Panel>                        
+                        </Accordion.Panel>
                     </Accordion>
-                    <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>                        
+                    <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>
                         <Accordion.Panel>
                             <Accordion.Title>
                                 Front-End
@@ -173,7 +173,7 @@ const SideNav = (props) => {
                             </Accordion.Content>
                         </Accordion.Panel>
                     </Accordion>
-                    <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>                        
+                    <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>
                         <Accordion.Panel>
                             <Accordion.Title>
                                 Python
@@ -200,7 +200,7 @@ const SideNav = (props) => {
                             </Accordion.Content>
                         </Accordion.Panel>
                     </Accordion>
-                    <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>                        
+                    <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>
                         <Accordion.Panel>
                             <Accordion.Title>
                                 Datas Structure & Algorithm
@@ -227,7 +227,7 @@ const SideNav = (props) => {
                             </Accordion.Content>
                         </Accordion.Panel>
                     </Accordion>
-                    <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>                        
+                    <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>
                         <Accordion.Panel>
                             <Accordion.Title>
                                 DevOps
@@ -254,7 +254,7 @@ const SideNav = (props) => {
                             </Accordion.Content>
                         </Accordion.Panel>
                     </Accordion>
-                    <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>                        
+                    <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>
                         <Accordion.Panel>
                             <Accordion.Title>
                                 Database
@@ -281,7 +281,7 @@ const SideNav = (props) => {
                             </Accordion.Content>
                         </Accordion.Panel>
                     </Accordion>
-                    <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>                        
+                    <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>
                         <Accordion.Panel>
                             <Accordion.Title>
                                 Software Testing
@@ -308,7 +308,7 @@ const SideNav = (props) => {
                             </Accordion.Content>
                         </Accordion.Panel>
                     </Accordion>
-                    <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>                        
+                    <Accordion arrowIcon={HiOutlineArrowCircleDown} alwaysOpen={true} flush={true}>
                         <Accordion.Panel>
                             <Accordion.Title>
                                 Cloud

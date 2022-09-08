@@ -9,7 +9,7 @@ const Header = (props) => {
     }
 
     return (
-        <div className={`${(isPreview || showRightSectionDrawer) ? '' : 'fixed'} top-0 w-full z-40 shadow-md`}>
+        <div className={`${(isPreview || showRightSectionDrawer) ? '' : 'fixed'} top-0 w-full z-40 shadow-md border-b border-b-gray-200 dark:border-b-gray-700`}>
             <Navbar
                 fluid={false}
                 rounded={false}
