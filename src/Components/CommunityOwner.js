@@ -5,13 +5,15 @@ const CommunityOwner = (props) => {
         <>
             <div className="w-full bg-white border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 pb-3 pt-2 mb-1">
                 {animate ? <div className="h-4 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mx-auto animate-pulse"></div>
-                    : <h5 className="text-2xl font-bold leading-none text-gray-900 dark:text-white">Community Owner</h5>}
+                    : <h5 className="text-2xl font-bold leading-none text-gray-900 dark:text-white text-center">Community Owner</h5>}
             </div>
             <div className="w-full bg-white border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <div className="flex flex-col items-center py-5 px-5">
-                    <div className='w-full flex flex-col items-end mb-3 text-gray-700 dark:text-gray-400'>
+                    <div className='w-full flex justify-between items-center mb-6 text-gray-700 dark:text-gray-400'>
+                        {animate ? <div className="h-3 bg-gray-200 rounded-full dark:bg-gray-700 w-48 animate-pulse"></div>
+                            : <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Community Owner</h5>}
                         {/* Edit Icon */}
-                        {!animate && <a href="#"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                        {!animate && <a href="#"><svg className="w-6 h-6 text-[#1c64f2] dark:text-[#3f83f8]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
                         </a>}
                     </div>
 

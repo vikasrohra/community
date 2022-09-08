@@ -11,7 +11,7 @@ const TopContributors = (props) => {
                     :
                     <>
                         <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Top Contributors</h5>
-                        <a href="#" className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+                        <a href="#" className="text-sm font-medium text-[#1c64f2] dark:text-[#3f83f8]">
                             View all
                         </a>
                     </>

@@ -2,10 +2,14 @@ import { Navbar, Dropdown, Avatar } from "flowbite-react";
 import { DarkThemeToggle } from 'flowbite-react/lib/esm/components';
 
 const Header = (props) => {
-    const { animate, isPreview } = { ...props };
+    const { animate, isPreview, setRightSectionDrawerVisibility, showRightSectionDrawer } = { ...props };
+
+    const displayRightSectionDrawer = (visibility) => {
+        setRightSectionDrawerVisibility(visibility);
+    }
 
     return (
-        <div className={`${isPreview ? '' : 'fixed'} top-0 w-full z-50 shadow-md`}>
+        <div className={`${(isPreview || showRightSectionDrawer) ? '' : 'fixed'} top-0 w-full z-40 shadow-md`}>
             <Navbar
                 fluid={false}
                 rounded={false}
@@ -115,7 +119,9 @@ const Header = (props) => {
                     </div>
 
                     {/* Menu Icon */}
-                    <svg className={`w-6 h-6 text-gray-900 dark:text-gray-300 ${animate ? "hidden" : ""}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    <div onClick={() => displayRightSectionDrawer(true)} className="cursor-pointer">
+                        <svg className={`w-6 h-6 text-gray-900 dark:text-gray-300 ${animate ? "hidden" : ""}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    </div>
                 </div>
 
                 {/* Header Right Pulse - md and below devices */}
