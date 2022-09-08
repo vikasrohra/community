@@ -5,7 +5,6 @@ const SideNav = (props) => {
     const { animate, isPreview, isHomeSelected, isGroupsSelected, isSettingsSelected, setHomeVisibility, setGroupsVisibility, setSettingsVisibility } = { ...props };
 
     const setSectionVisibility = (isHome, isGroup, isSettting) => {
-        debugger;
         setHomeVisibility(isHome);
         setGroupsVisibility(isGroup);
         setSettingsVisibility(isSettting);
