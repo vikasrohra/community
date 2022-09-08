@@ -16,12 +16,12 @@ const BottomNav = (props) => {
     return (
         <>
             {animate &&
-                <div className="relative flex w-full justify-center">
+                <div className="relative flex w-full justify-center lg:hidden">
                     <span className={`fixed w-12 h-1.5 bg-gray-400 rounded-lg bottom-2 z-50 dark:bg-gray-600 ${showBottomNav ? '-translate-y-10' : 'translate-y-0'} ease-in-out duration-500 animate-pulse`}></span>
                 </div>
             }
             {!animate &&
-                <div className="relative flex w-full justify-center" onClick={changeBottomNavVisibility}>
+                <div className="relative flex w-full justify-center lg:hidden" onClick={changeBottomNavVisibility}>
                     <span className={`fixed w-12 h-1.5 bg-gray-400 rounded-lg bottom-2 z-50 dark:bg-gray-600 ${showBottomNav ? '-translate-y-10' : '-translate-y-0'} ease-in-out duration-500`}></span>
                 </div>
             }

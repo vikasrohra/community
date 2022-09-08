@@ -1,9 +1,9 @@
 const ExploreGroups = () => {
     return (
-        <div className="flex items-start flex-wrap w-full gap-4 md:gap-3 lg:gap-0 md:gap-x-[1.70%] lg:gap-x-[1.70%] bg-white text-left mx-4 lg:m-0 lg:ml-[16rem] xl:ml-[16.9rem] lg:mr-4">
+        <div className="flex items-start flex-wrap w-full gap-4 md:gap-3 lg:gap-0 md:gap-x-[1.70%] lg:gap-x-[1.70%] bg-white text-left mx-4 lg:m-0 lg:ml-[16rem] xl:ml-[16.9rem] lg:mr-4 dark:bg-[#111827]">
             <div className="md:w-[32%] bg-white shadow-md border border-gray-200 dark:border-0 dark:bg-gray-800 overflow-hidden">
                 <a href="#">
-                    <img className='hover:scale-105 delay-200 duration-300' src={require('../Assets/Images/hero.webp')} alt="" />
+                    <img className='hover:scale-105 delay-200 ease-in-out duration-200' src={require('../Assets/Images/hero.webp')} alt="" />
                 </a>
                 <div className="p-3">
                     <a href="#">
@@ -28,7 +28,7 @@ const ExploreGroups = () => {
             </div>
             <div className="md:w-[32%] bg-white shadow-md border border-gray-200 dark:border-0 dark:bg-gray-800 overflow-hidden">
                 <a href="#">
-                    <img className='hover:scale-105 delay-200 duration-300' src={require('../Assets/Images/hero.webp')} alt="" />
+                    <img className='hover:scale-105 delay-200 ease-in-out duration-200' src={require('../Assets/Images/hero.webp')} alt="" />
                 </a>
                 <div className="p-3">
                     <a href="#">
@@ -53,7 +53,7 @@ const ExploreGroups = () => {
             </div>
             <div className="md:w-[32%] bg-white shadow-md border border-gray-200 dark:border-0 dark:bg-gray-800 overflow-hidden">
                 <a href="#">
-                    <img className='hover:scale-105 delay-200 duration-300' src={require('../Assets/Images/hero.webp')} alt="" />
+                    <img className='hover:scale-105 delay-200 ease-in-out duration-200' src={require('../Assets/Images/hero.webp')} alt="" />
                 </a>
                 <div className="p-3">
                     <a href="#">
@@ -77,7 +77,7 @@ const ExploreGroups = () => {
             </div>
             <div className="md:w-[32%] bg-white shadow-md border border-gray-200 dark:border-0 dark:bg-gray-800 overflow-hidden">
                 <a href="#">
-                    <img className='hover:scale-105 delay-200 duration-300' src={require('../Assets/Images/hero.webp')} alt="" />
+                    <img className='hover:scale-105 delay-200 ease-in-out duration-200' src={require('../Assets/Images/hero.webp')} alt="" />
                 </a>
                 <div className="p-3">
                     <a href="#">
@@ -102,7 +102,7 @@ const ExploreGroups = () => {
             </div>
             <div className="md:w-[32%] bg-white shadow-md border border-gray-200 dark:border-0 dark:bg-gray-800 overflow-hidden">
                 <a href="#">
-                    <img className='hover:scale-105 delay-200 duration-300' src={require('../Assets/Images/hero.webp')} alt="" />
+                    <img className='hover:scale-105 delay-200 ease-in-out duration-200' src={require('../Assets/Images/hero.webp')} alt="" />
                 </a>
                 <div className="p-3">
                     <a href="#">
@@ -127,7 +127,7 @@ const ExploreGroups = () => {
             </div>
             <div className="md:w-[32%] bg-white shadow-md border border-gray-200 dark:border-0 dark:bg-gray-800 overflow-hidden">
                 <a href="#">
-                    <img className='hover:scale-105 delay-200 duration-300' src={require('../Assets/Images/hero.webp')} alt="" />
+                    <img className='hover:scale-105 delay-200 ease-in-out duration-200' src={require('../Assets/Images/hero.webp')} alt="" />
                 </a>
                 <div className="p-3">
                     <a href="#">
@@ -152,7 +152,7 @@ const ExploreGroups = () => {
             </div>
             <div className="md:w-[32%] bg-white shadow-md border border-gray-200 dark:border-0 dark:bg-gray-800 overflow-hidden">
                 <a href="#">
-                    <img className='hover:scale-105 delay-200 duration-300' src={require('../Assets/Images/hero.webp')} alt="" />
+                    <img className='hover:scale-105 delay-200 ease-in-out duration-200' src={require('../Assets/Images/hero.webp')} alt="" />
                 </a>
                 <div className="p-3">
                     <a href="#">
