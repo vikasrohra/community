@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Flowbite, Dropdown } from 'flowbite-react/lib/esm/components';
+import { Flowbite } from 'flowbite-react/lib/esm/components';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
