@@ -22,10 +22,10 @@ const BottomNav = (props) => {
             }
             {!animate &&
                 <div className="relative flex w-full justify-center lg:hidden" onClick={changeBottomNavVisibility}>
-                    <span className={`fixed w-12 h-1.5 bg-gray-400 rounded-lg bottom-2 z-50 dark:bg-gray-600 ${showBottomNav ? '-translate-y-10' : '-translate-y-0'} ease-in-out duration-500`}></span>
+                    <span className={`fixed w-12 h-1.5 bg-gray-400 rounded-lg bottom-2 z-50 dark:bg-gray-600 ${showBottomNav ? '-translate-y-10' : '-translate-y-2'} ease-in-out duration-500`}></span>
                 </div>
             }
-            <div className={`fixed bottom-0 border-t rounded-t-xl border-t-gray-200 dark:border-t-gray-700 w-full lg:hidden shadow-inner z-40 bg-white dark:bg-[#1F2937] ${showBottomNav ? '-translate-y-0' : 'translate-y-10'} ease-in-out duration-500 py-1`}>
+            <div className={`fixed bottom-0 border-t rounded-t-xl border-t-gray-200 dark:border-t-gray-700 w-full lg:hidden shadow-inner z-40 bg-white dark:bg-[#1F2937] ${showBottomNav ? '-translate-y-0' : 'translate-y-8'} ease-in-out duration-500 py-1`}>
                 {/* Bottom Nav */}
                 <div className={`w-full flex justify-evenly items-center lg:hidden mt-4`}>
                     {/* Notifications */}

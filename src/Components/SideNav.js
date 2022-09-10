@@ -2,7 +2,7 @@ import { Sidebar, Accordion } from "flowbite-react/lib/esm/components";
 import { HiOutlineArrowCircleDown } from "flowbite";
 
 const SideNav = (props) => {
-    const { animate, isPreview, isHomeSelected, isGroupsSelected, isSettingsSelected, setHomeVisibility, setGroupsVisibility, setSettingsVisibility } = { ...props };
+    const { animate, isPreview, isHomeSelected, isGroupsSelected, isSettingsSelected, setHomeVisibility, setGroupsVisibility, setSettingsVisibility, appDataPreview } = { ...props };
 
     const setSectionVisibility = (isHome, isGroup, isSettting) => {
         setHomeVisibility(isHome);

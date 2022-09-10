@@ -2,12 +2,18 @@ import { useEffect, useState } from 'react';
 import SectionTabs from './SectionTabs';
 
 const Hero = (props) => {
-    const { animate } = { ...props };
+    const { animate, isPreview, appDataPreview } = { ...props };
 
     const [heroData, setHeroData] = useState({});
 
     useEffect(() => {
-        let appData = JSON.parse(localStorage.getItem("appData"));
+        let appData = {};
+        if (isPreview) {
+            appData = appDataPreview;
+        }
+        else {
+            appData = JSON.parse(localStorage.getItem("appData"));
+        }
         setHeroData(appData);
     }, []);
 
@@ -28,7 +34,7 @@ const Hero = (props) => {
                 <>
                     <div className="w-full bg-white border border-gray-200 dark:border-gray-700 shadow-md text-left mx-4 lg:m-0 lg:ml-[16rem] xl:ml-[16.9rem] lg:mr-4 dark:bg-gray-800">
                         <div className='overflow-hidden'>
-                            {heroData && heroData.community && <img className="w-full hover:scale-125 ease-in-out duration-200" src={`data:image/png;base64,${heroData.community.image}`} alt="Hero" />}
+                            {heroData && heroData.community && <img className="w-full hover:scale-125 ease-in-out duration-200" src={`${heroData.community.image}`} alt="Hero" />}
                             {!heroData && <img className="w-full hover:scale-125 ease-in-out duration-200" src={require('../Assets/Images/hero.jpg')} alt="Hero" />}
                         </div>
                         <div className="p-5 pb-0">
@@ -51,9 +57,9 @@ const Hero = (props) => {
                                             </p>
                                         </div>
                                         <div className="flex -space-x-5 mt-4 cursor-pointer md:mt-0">
-                                            <img className="w-12 h-12 rounded-full ring-2 ring-gray-300 border-2 border-white dark:border-gray-800" src={require('../Assets/Images/member2.webp')} alt="1" />
+                                            <img className="w-12 h-12 rounded-full ring-2 ring-gray-300 border-2 border-white dark:border-gray-800" src={require('../Assets/Images/member1.png')} alt="1" />
 
-                                            <img className="w-12 h-12 rounded-full ring-2 ring-gray-300 border-2 border-white dark:border-gray-800" src={require('../Assets/Images/member1.jpg')} alt="2" />
+                                            <img className="w-12 h-12 rounded-full ring-2 ring-gray-300 border-2 border-white dark:border-gray-800" src={require('../Assets/Images/member2.jpg')} alt="2" />
 
                                             <img className="w-12 h-12 rounded-full ring-2 ring-gray-300 border-2 border-white dark:border-gray-800" src={require('../Assets/Images/member9.jpg')} alt="3" />
 
@@ -99,7 +105,7 @@ const Hero = (props) => {
                         </div>
 
                         {/* Tabs */}
-                        <SectionTabs animate={animate} />
+                        <SectionTabs animate={animate} isPreview={isPreview} appDataPreview={appDataPreview} />
                     </div>
                 </>
             }
@@ -108,3 +114,7 @@ const Hero = (props) => {
 }
 
 export default Hero;
+
+Hero.defaultProps = {
+    isPreview: false
+}

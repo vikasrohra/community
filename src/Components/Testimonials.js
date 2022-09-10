@@ -20,7 +20,7 @@ const Testimonials = () => {
                                         <p className="text-md font-normal text-gray-900 dark:text-gray-400 italic">{`"${item.description}"`}</p>
                                     </blockquote>
                                     <figcaption className="flex items-center mt-3 space-x-3 justify-center md:justify-end">
-                                        <img className="w-6 h-6 rounded-full" src={`data:image/png;base64,${item.logo}`} alt="profile" />
+                                        <img className="w-6 h-6 rounded-full" src={`${item.logo}`} alt="profile" />
                                         <div className="flex items-center divide-x-2 divide-gray-300 dark:divide-gray-700">
                                             <cite className="pr-3 font-medium text-gray-900 dark:text-white">{item.name}</cite>
                                             <cite className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">SDE</cite>
@@ -37,7 +37,7 @@ const Testimonials = () => {
                                             <p className="text-md font-normal text-gray-900 dark:text-gray-400 italic">{`"${item.description}"`}</p>
                                         </blockquote>
                                         <figcaption className="flex items-center mt-3 space-x-3 justify-center md:justify-end">
-                                            <img className="w-6 h-6 rounded-full" src={`data:image/png;base64,${item.logo}`} alt="profile" />
+                                            <img className="w-6 h-6 rounded-full" src={`${item.logo}`} alt="profile" />
                                             <div className="flex items-center divide-x-2 divide-gray-300 dark:divide-gray-700">
                                                 <cite className="pr-3 font-medium text-gray-900 dark:text-white">{item.name}</cite>
                                                 <cite className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">{item.designation}</cite>

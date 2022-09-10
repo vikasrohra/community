@@ -3,14 +3,20 @@ import { DarkThemeToggle } from 'flowbite-react/lib/esm/components';
 import { useEffect, useState } from "react";
 
 const Header = (props) => {
-    const { animate, isPreview, setRightSectionDrawerVisibility, showRightSectionDrawer, isHomeSelected, isGroupsSelected, isSettingsSelected, setHomeVisibility, setGroupsVisibility, setSettingsVisibility } = { ...props };
+    const { animate, isPreview, setRightSectionDrawerVisibility, showRightSectionDrawer, isHomeSelected, isGroupsSelected, isSettingsSelected, setHomeVisibility, setGroupsVisibility, setSettingsVisibility, appDataPreview } = { ...props };
 
     const [headerData, setHeaderData] = useState({});
 
     useEffect(() => {
-        let appData = JSON.parse(localStorage.getItem("appData"));
+        let appData = {};
+        if (isPreview) {
+            appData = appDataPreview;
+        }
+        else {
+            appData = JSON.parse(localStorage.getItem("appData"));
+        }
         setHeaderData(appData);
-    }, []);
+    }, [isPreview]);
 
     const displayRightSectionDrawer = (visibility) => {
         setRightSectionDrawerVisibility(visibility);
@@ -32,7 +38,7 @@ const Header = (props) => {
                 <Navbar.Brand href="./">
                     {/* Brand - Image and Text */}
                     {headerData && headerData.community && <img
-                        src={`data:image/png;base64,${headerData.community.logo}`}
+                        src={`${headerData.community.logo}`}
                         className={`mr-3 h-6 sm:h-9 ${animate ? "hidden" : ""}`}
                         alt="Communion"
                     />}
@@ -76,7 +82,7 @@ const Header = (props) => {
                             arrowIcon={false}
                             floatingArrow={false}
                             inline={true}
-                            label={<Avatar alt="User settings" img={`data:image/png;base64,${headerData.owner.image}`} rounded={true} status="online"
+                            label={<Avatar alt="User settings" img={`${headerData.owner.image}`} rounded={true} status="online"
                                 statusPosition="bottom-right" bordered={true} />}
                         >
                             <Dropdown.Header>

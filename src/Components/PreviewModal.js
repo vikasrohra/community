@@ -1,10 +1,22 @@
+import { useEffect, useRef, useState } from "react";
 import Header from "./Header";
 import Hero from "./Hero";
 import RightSection from "./RightSection";
 import SideNav from "./SideNav";
 
 const PreviewModal = (props) => {
-    const { showPreview, setPreviewModalVisibility, animate } = { ...props };
+    const { showPreview, setPreviewModalVisibility, animate, appDataPreview } = { ...props };
+
+    // const isMounted = useRef(false);
+
+    // useEffect(() => {
+    //     console.log("appDataPreview", appDataPreview);
+    //     if (isMounted.current) {
+    //         setPreviewModalToggler(!previewModalToggler);
+    //       } else {
+    //         isMounted.current = true;
+    //       }
+    // }, [showPreview]);
 
     const closePreviewModal = (visibility) => {
         setPreviewModalVisibility(visibility);
@@ -27,18 +39,18 @@ const PreviewModal = (props) => {
                     </div>
                     {/* <!-- Modal body --> */}
                     <div className="p-6 space-y-6">
-                        <Header animate={animate} isPreview={true} />
+                        <Header animate={animate} isPreview={true} appDataPreview={appDataPreview} />
                         <main className='flex mt-20 mb-20 lg:mb-0 md:mt-[5rem] lg:flex lg:flex-row lg:mt-20'>
                             <SideNav animate={animate} isPreview={true} />
-                            <Hero animate={animate} />
-                            <RightSection animate={animate} />
+                            <Hero animate={animate} isPreview={true} />
+                            <RightSection animate={animate} isPreview={true} />
                         </main>
                     </div>
                     {/* <!-- Modal footer --> */}
-                    <div className="flex items-center justify-end p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                    {/* <div className="flex items-center justify-end p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
                         <button data-modal-toggle="top-left-modal" type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={() => closePreviewModal(false)}>Cancel</button>
                         <button data-modal-toggle="top-left-modal" type="button" className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600" onClick={() => closePreviewModal(false)}>Publish</button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

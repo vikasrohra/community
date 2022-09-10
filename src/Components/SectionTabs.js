@@ -7,12 +7,18 @@ import Testimonials from "./Testimonials";
 import { useEffect, useState } from 'react';
 
 const SectionTabs = (props) => {
-    const { animate } = { ...props };
+    const { animate, isPreview, appDataPreview } = { ...props };
 
     const [communityDesc, setCommunityDesc] = useState({});
 
     useEffect(() => {
-        let appData = JSON.parse(localStorage.getItem("appData"));
+        let appData = {};
+        if (isPreview) {
+            appData = appDataPreview;
+        }
+        else {
+            appData = JSON.parse(localStorage.getItem("appData"));
+        }
         setCommunityDesc(appData);
     }, []);
 
