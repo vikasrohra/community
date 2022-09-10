@@ -155,7 +155,7 @@ const Settings = (props) => {
 
     return (
         <div className="bg-gradient-to-r from-cyan-400 to-blue-700 w-full h-52 -mt-5 -z-1">
-            <div className="p-4 w-[80vw] mx-auto mt-28 bg-white border border-gray-200 shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <div className="p-4 w-[95vw] lg:w-[80vw] mx-auto mt-28 bg-white border border-gray-200 shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gr5y-700">
                 {appData && appData.community &&
                     <div className='w-full flex justify-end'>
                         <Tooltip content="Preview" animation="duration-500" placement="top">
@@ -174,9 +174,9 @@ const Settings = (props) => {
                         </Tooltip>
                     </div>
                 }
-                <div className='flex'>
+                <div className='flex flex-col lg:flex-row'>
                     {/* Sidebar */}
-                    <aside className={`w-[25vw] border border-gray-200 dark:border-gray-700 shadow-md text-left`} aria-label="Sidebar">
+                    <aside className={`w-full lg:w-[25vw] border border-gray-200 dark:border-gray-700 shadow-md text-left`} aria-label="Sidebar">
                         <div className="overflow-y-auto py-4 px-3 bg-white dark:bg-gray-800">
                             <ul className="space-y-2">
                                 <li>
@@ -213,7 +213,7 @@ const Settings = (props) => {
                         </div>
                     </aside>
                     {/* Content */}
-                    <div className='ml-8'>
+                    <div className='mt-8 lg:mt-0 lg:ml-8 w-full'>
                         {appData && appData.community &&
                             <>
                                 {showCommunityDetails &&
@@ -228,7 +228,7 @@ const Settings = (props) => {
                                                 className="hidden"
                                             />
                                         </Tooltip>
-                                        <div className='flex justify-between'>
+                                        <div className='flex flex-col items-center space-y-4 lg:space-y-0 lg:flex-row lg:justify-between'>
                                             <Tooltip content="Click to change Logo" animation="duration-500">
                                                 <figure>
                                                     <img className="w-36 rounded-full border border-gray-200 dark:border-gray-700 cursor-pointer" src={`${appData.community.logo}`} alt="description" onClick={handleLogoClick} />
