@@ -17,7 +17,7 @@ Communion community is providing a platform for developers to learn, interact, s
 ![Communion Preview](https://github.com/vikasrohra/community/blob/main/src/Assets/Images/Communion1.png)
 
 ## Live Link
-[Click Me](https://communion-community.netlify.app/)
+[Click Me](https://community-orpin.vercel.app/)
 
 [Portfolio](https://vikasrohra.com/)
 
